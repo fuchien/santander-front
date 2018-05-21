@@ -7,17 +7,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // MODULES
 import { AngularMaterialModule } from './angular-material/angular-material.module';
-import { ClientsComponent } from './components/clients/clients.component';
-import { BooksComponent } from './components/books/books.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
+// COMPONENTS
+import { BooksComponent } from './components/books/books.component';
+import { ClientsComponent } from './components/clients/clients.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientsComponent,
     BooksComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ClientsComponent
   ],
   imports: [
     BrowserModule,
