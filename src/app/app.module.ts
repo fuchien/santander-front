@@ -9,13 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { ClientsComponent } from './components/clients/clients.component';
 import { BooksComponent } from './components/books/books.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientsComponent,
-    BooksComponent
+    BooksComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
