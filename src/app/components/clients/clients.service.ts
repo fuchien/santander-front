@@ -12,6 +12,6 @@ export class ClientsService {
   ) { }
 
   postData(data: string): Observable<any> {
-    return this._http.post(`http://www.mocky.io/v2/5b037ac53000006c00cee56b`, JSON.stringify(data))
+    return this._http.post(`https://www.mocky.io/v2/5b0380b53000006e00cee577`, JSON.stringify(data))
   }
 }

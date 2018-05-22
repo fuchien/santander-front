@@ -1,1 +1,6 @@
 <app-form (clicked)="passingData($event)"></app-form>
+<div class="container">
+  <div class="clients" *ngFor="let client of clients | async">
+    <app-cards [client]="client"></app-cards>
+  </div>
+</div>
