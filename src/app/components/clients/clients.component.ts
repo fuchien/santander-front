@@ -1,11 +1,13 @@
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { catchError } from 'rxjs/operators';
 
 // MODELS
 import { clients } from './../../shared/models/clients/clients';
 
 // SERVICES
 import { ClientsService } from './clients.service';
+import { SnackBarService } from '../../shared/snack-bar/snack-bar.service';
 
 @Component({
   selector: 'app-clients',
@@ -18,7 +20,8 @@ export class ClientsComponent implements OnInit {
   public loading: boolean = false
 
   constructor(
-    private clientsService: ClientsService
+    private clientsService: ClientsService,
+    private snackBar: SnackBarService
   ) { }
 
   ngOnInit() {
@@ -26,15 +29,17 @@ export class ClientsComponent implements OnInit {
 
   passingData(name: string) {
     this.loading = true
-    this.clientsService.postData(name).subscribe(
-      (clients: clients[]) => {
-        this.loading = false
-        this.clients = clients
-      },
-      (err) => {
-        console.log(err)
-      }
-    )
+    this.clientsService.postData(name)
+      .subscribe(
+        (clients: clients[]) => {
+          this.loading = false
+          this.clients = clients
+        },
+        (err: any) => {
+          this.loading = false
+          this.snackBar.openSnackBar(`Error to get data!`, 'Close')
+        }
+      )
   }
 
 }

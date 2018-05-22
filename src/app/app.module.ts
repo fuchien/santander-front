@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { AppErrorHandler } from './app-error-handler';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +33,8 @@ import { ClientsService } from './components/clients/clients.service';
     SharedModule,
   ],
   providers: [
-    ClientsService
+    ClientsService,
+    // { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap: [AppComponent]
 })
