@@ -15,7 +15,7 @@ export class ClientsService {
     private _http: HttpClient
   ) { }
 
-  postData(name: string): Observable<clients[]> {
-    return this._http.get<clients[]>(`${Config.backEndPoint}/clients/${name}`)
+  getData(name: string): Observable<clients[]> {
+    return this._http.get<clients[]>(`${Config.backEndPoint}/users/by-name/${name}`)
   }
 }

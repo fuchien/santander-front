@@ -29,7 +29,7 @@ export class ClientsComponent implements OnInit {
 
   passingData(name: string) {
     this.loading = true
-    this.clientsService.postData(name)
+    this.clientsService.getData(name)
       .subscribe(
         (clients: clients[]) => {
           this.loading = false
