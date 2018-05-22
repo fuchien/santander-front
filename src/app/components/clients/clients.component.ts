@@ -1,4 +1,8 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+
+// SERVICES
+import { ClientsService } from './clients.service';
 
 @Component({
   selector: 'app-clients',
@@ -7,13 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientsComponent implements OnInit {
 
-  constructor() { }
+  public clientsData
+
+  constructor(
+    private clientsService: ClientsService
+  ) { }
 
   ngOnInit() {
   }
 
-  passingData(event: Event) {
-    console.log(event)
+  passingData(event: string) {
+    this.clientsService.postData(event)
   }
 
 }

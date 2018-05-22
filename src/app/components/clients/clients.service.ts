@@ -11,7 +11,7 @@ export class ClientsService {
     private _http: HttpClient
   ) { }
 
-  getData(): Observable<any> {
-    return this._http.get(`http://www.mocky.io/v2/5b03760c3000005a00cee55d`)
+  postData(data: string): Observable<any> {
+    return this._http.post(`http://www.mocky.io/v2/5b03760c3000005a00cee55d`, JSON.stringify(data))
   }
 }
