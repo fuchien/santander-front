@@ -10,6 +10,9 @@ import { AngularMaterialModule } from './../../angular-material/angular-material
 import { CardsComponent } from './../cards/cards.component';
 import { FormComponent } from './../form/form.component';
 
+// Services
+import { SnackBarService } from './../snack-bar/snack-bar.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -25,7 +28,11 @@ import { FormComponent } from './../form/form.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormComponent,
-    CardsComponent
+    CardsComponent,
+    SnackBarService
+  ],
+  providers: [
+    SnackBarService
   ]
 })
 export class SharedModule { }
