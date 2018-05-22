@@ -4,5 +4,5 @@
   <div class="clients" *ngFor="let client of clients">
     <app-cards [client]="client"></app-cards>
   </div>
-  <h4 *ngIf="!clients?.length" style="margin:5vh auto;">No one client!</h4>
+  <h4 *ngIf="!loading && !clients?.length" style="margin:5vh auto;">No one client!</h4>
 </div>

@@ -9,9 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // MODULES
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { SharedModule } from './shared/shared/shared.module';
+import { BooksModule } from './components/books/books.module';
 
 // COMPONENTS
-import { BooksComponent } from './components/books/books.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
@@ -21,7 +21,6 @@ import { ClientsService } from './components/clients/clients.service';
 @NgModule({
   declarations: [
     AppComponent,
-    BooksComponent,
     ToolbarComponent,
     ClientsComponent
   ],
@@ -31,6 +30,7 @@ import { ClientsService } from './components/clients/clients.service';
     BrowserAnimationsModule,
     AngularMaterialModule,
     SharedModule,
+    BooksModule
   ],
   providers: [
     ClientsService,
