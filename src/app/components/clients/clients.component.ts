@@ -12,4 +12,8 @@ export class ClientsComponent implements OnInit {
   ngOnInit() {
   }
 
+  passingData(event: Event) {
+    console.log(event)
+  }
+
 }
