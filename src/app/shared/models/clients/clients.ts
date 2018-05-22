@@ -1,5 +1,5 @@
 export interface clients {
-    name: string
+    clientName: string
     age: number
     photo: string
 }

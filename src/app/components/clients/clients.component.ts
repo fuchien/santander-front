@@ -14,7 +14,7 @@ import { ClientsService } from './clients.service';
 })
 export class ClientsComponent implements OnInit {
 
-  public clients: Observable<clients>
+  public clients: Observable<clients[]>
 
   constructor(
     private clientsService: ClientsService
@@ -23,8 +23,8 @@ export class ClientsComponent implements OnInit {
   ngOnInit() {
   }
 
-  passingData(event: string) {
-    this.clients = this.clientsService.postData(event)
+  passingData(name: string) {
+    this.clients = this.clientsService.postData(name)
   }
 
 }

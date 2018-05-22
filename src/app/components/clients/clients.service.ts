@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Config } from './../../config';
+
+// MODELS
+import { clients } from './../../shared/models/clients/clients';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +15,7 @@ export class ClientsService {
     private _http: HttpClient
   ) { }
 
-  postData(data: string): Observable<any> {
-    return this._http.post(`https://www.mocky.io/v2/5b0380b53000006e00cee577`, JSON.stringify(data))
+  postData(name: string): Observable<clients[]> {
+    return this._http.get<clients[]>(`${Config.backEndPoint}/clients/${name}`)
   }
 }
