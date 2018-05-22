@@ -14,7 +14,8 @@ import { ClientsService } from './clients.service';
 })
 export class ClientsComponent implements OnInit {
 
-  public clients: Observable<clients[]>
+  public clients: clients[]
+  public loading: boolean = false
 
   constructor(
     private clientsService: ClientsService
@@ -24,7 +25,16 @@ export class ClientsComponent implements OnInit {
   }
 
   passingData(name: string) {
-    this.clients = this.clientsService.postData(name)
+    this.loading = true
+    this.clientsService.postData(name).subscribe(
+      (clients: clients[]) => {
+        this.loading = false
+        this.clients = clients
+      },
+      (err) => {
+        console.log(err)
+      }
+    )
   }
 
 }

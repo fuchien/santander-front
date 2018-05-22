@@ -1,6 +1,7 @@
 <app-form (clicked)="passingData($event)"></app-form>
 <div class="container">
-  <div class="clients" *ngFor="let client of clients | async">
+  <mat-spinner *ngIf="loading" style="margin: 0 auto;" color="primary"></mat-spinner>
+  <div class="clients" *ngFor="let client of clients">
     <app-cards [client]="client"></app-cards>
   </div>
 </div>
