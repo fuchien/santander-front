@@ -12,4 +12,8 @@ export class BooksComponent implements OnInit {
   ngOnInit() {
   }
 
+  passingData(title: string) {
+    console.log(title)
+  }
+
 }

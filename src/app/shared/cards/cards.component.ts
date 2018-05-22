@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 // MODELS
+import { books } from './../models/books/books';
 import { clients } from './../models/clients/clients';
 
 @Component({
@@ -11,6 +12,7 @@ import { clients } from './../models/clients/clients';
 export class CardsComponent implements OnInit {
 
   @Input() client: clients
+  @Input() books: books
 
   constructor() { }
 

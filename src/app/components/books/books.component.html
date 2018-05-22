@@ -1,3 +1,8 @@
-<p>
-  books works!
-</p>
+<app-form (clicked)="passingData($event)"></app-form>
+<div class="container">
+  <mat-spinner *ngIf="loading" style="margin: 0 auto;" color="primary"></mat-spinner>
+  <div class="book" *ngFor="let book of books">
+    <app-cards [book]="book"></app-cards>
+  </div>
+  <h4 *ngIf="!books?.length" style="margin:5vh auto;">No one book!</h4>
+</div>
