@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // MODULES
 import { AngularMaterialModule } from './angular-material/angular-material.module';
+import { SharedModule } from './shared/shared/shared.module';
 
 // COMPONENTS
 import { BooksComponent } from './components/books/books.component';
@@ -24,7 +25,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
