@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Module
 import { AngularMaterialModule } from './../../angular-material/angular-material.module';
@@ -11,13 +13,17 @@ import { FormComponent } from './../form/form.component';
 @NgModule({
   imports: [
     CommonModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   declarations: [
     FormComponent,
     CardsComponent
   ],
   exports: [
+    ReactiveFormsModule,
+    HttpClientModule,
     FormComponent,
     CardsComponent
   ]
