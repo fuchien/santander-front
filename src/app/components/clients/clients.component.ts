@@ -1,6 +1,9 @@
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
+// MODELS
+import { clients } from './../../shared/models/clients/clients';
+
 // SERVICES
 import { ClientsService } from './clients.service';
 
@@ -11,7 +14,7 @@ import { ClientsService } from './clients.service';
 })
 export class ClientsComponent implements OnInit {
 
-  public clientsData
+  public clients: Observable<clients>
 
   constructor(
     private clientsService: ClientsService
@@ -21,7 +24,7 @@ export class ClientsComponent implements OnInit {
   }
 
   passingData(event: string) {
-    this.clientsService.postData(event)
+    this.clients = this.clientsService.postData(event)
   }
 
 }
