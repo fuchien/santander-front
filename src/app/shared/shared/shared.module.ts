@@ -28,8 +28,7 @@ import { SnackBarService } from './../snack-bar/snack-bar.service';
     ReactiveFormsModule,
     HttpClientModule,
     FormComponent,
-    CardsComponent,
-    SnackBarService
+    CardsComponent
   ],
   providers: [
     SnackBarService
