@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { SnackBarService } from './../snack-bar/snack-bar.service';
@@ -9,6 +9,8 @@ import { SnackBarService } from './../snack-bar/snack-bar.service';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
+
+  @Output() clicked = new EventEmitter<string>()
 
   public form: FormGroup
 
@@ -29,6 +31,7 @@ export class FormComponent implements OnInit {
       this.snackBar.openSnackBar('Put some data!', 'Close')
       return
     }
+    this.clicked.emit(this.form.get('input').value)
   }
 
 }

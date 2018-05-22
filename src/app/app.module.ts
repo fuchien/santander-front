@@ -14,6 +14,9 @@ import { BooksComponent } from './components/books/books.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
+// SERVICES
+import { ClientsService } from './components/clients/clients.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +31,9 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     AngularMaterialModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [
+    ClientsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
