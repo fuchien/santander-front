@@ -9,6 +9,9 @@ import { SharedModule } from './../../shared/shared/shared.module';
 // COMPONENTS
 import { BooksComponent } from './books.component';
 
+// SERVICES
+import { BooksService } from './books.service';
+
 const routes: Routes = [
   {
     path: '',
@@ -27,6 +30,9 @@ const routes: Routes = [
   ],
   exports: [
     BooksComponent
+  ],
+  providers: [
+    BooksService
   ]
 })
 export class BooksModule { }

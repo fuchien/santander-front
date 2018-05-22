@@ -12,7 +12,7 @@ import { clients } from './../models/clients/clients';
 export class CardsComponent implements OnInit {
 
   @Input() client: clients
-  @Input() books: books
+  @Input() book: books
 
   constructor() { }
 

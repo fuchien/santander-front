@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+// SERVICES
+import { BooksService } from './books.service';
+import { SnackBarService } from './../../shared/snack-bar/snack-bar.service';
+
 // MODELS
 import { books } from './../../shared/models/books/books';
 @Component({
@@ -12,13 +16,27 @@ export class BooksComponent implements OnInit {
   public books: books[]
   public loading: boolean = false
 
-  constructor() { }
+  constructor(
+    private booksService: BooksService,
+    private snackBar: SnackBarService
+  ) { }
 
   ngOnInit() {
   }
 
   passingData(title: string) {
-    console.log(title)
+    this.loading = true
+    this.booksService.getData(title)
+      .subscribe(
+        (books: books[]) => {
+          this.loading = false
+          this.books = books
+        },
+        (err: any) => {
+          this.loading = false
+          this.snackBar.openSnackBar(`Error to get data!`, 'Close')
+        }
+      )
   }
 
 }

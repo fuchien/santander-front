@@ -2,7 +2,7 @@
 <div class="container">
   <mat-spinner *ngIf="loading" style="margin: 0 auto;" color="primary"></mat-spinner>
   <div class="books" *ngFor="let book of books">
-    <app-cards [books]="books"></app-cards>
+    <app-cards [book]="book"></app-cards>
   </div>
   <h4 *ngIf="!loading && !books?.length" style="margin:5vh auto;">No one book!</h4>
 </div>
