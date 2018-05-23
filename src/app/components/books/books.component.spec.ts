@@ -1,4 +1,3 @@
-import { User } from './../../shared/stubs/users-stub/user-stub';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './../../angular-material/angular-material.module';
 import { SnackBarService } from './../../shared/snack-bar/snack-bar.service';
