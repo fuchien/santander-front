@@ -28,6 +28,7 @@ export class BooksComponent implements OnInit {
 
   passingData(event: event) {
     this.loading = true
+    this.books = []
     this.booksService.getData(event)
       .subscribe(
         (books: books[]) => {

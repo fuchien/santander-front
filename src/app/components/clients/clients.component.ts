@@ -30,6 +30,7 @@ export class ClientsComponent implements OnInit {
 
   passingData(event: event) {
     this.loading = true
+    this.clients = []
     this.clientsService.getData(event.value)
       .subscribe(
         (clients: clients[]) => {
