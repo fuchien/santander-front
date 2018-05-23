@@ -3,4 +3,6 @@ export interface books {
     title: string
     subtitle: string
     photo: string
+    created_at: string
+    updated_at: string
 }
