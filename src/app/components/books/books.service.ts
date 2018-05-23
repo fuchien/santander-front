@@ -4,6 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Config } from '../../config';
 
+// MODELS
+import { event } from './../../shared/models/event/event';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +16,10 @@ export class BooksService {
     private _http: HttpClient
   ) { }
 
-  getData(title: string): Observable<books[]> {
-    return this._http.get<books[]>(`${Config.backEndPoint}/books/by-title/${title}`)
+  getData(event: event): Observable<books[]> {
+    if (event.authorOrClient) {
+      return this._http.get<books[]>(`${Config.backEndPoint}/books/by-title/${event.value}`)
+    }
+    return this._http.get<books[]>(`${Config.backEndPoint}/books/by-author/${event.value}`)
   }
 }

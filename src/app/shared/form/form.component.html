@@ -1,7 +1,7 @@
 <div class="form">
   <form [formGroup]="form">
-    <mat-slide-toggle color="primary" formControlName="slideToggle" *ngIf="authorOrClient">
-      {{ form.value.slideToggle ? 'Client name' : 'Author name' }}</mat-slide-toggle>
+    <mat-slide-toggle color="primary" formControlName="slideToggle" *ngIf="authorOrTitle">
+      {{ form.value.slideToggle ? 'Books title' : 'Author name' }}</mat-slide-toggle>
     <mat-grid-list cols="6" rowHeight="100px">
       <mat-grid-tile [colspan]="5">
         <mat-form-field class="example-full-width">

@@ -1,9 +1,14 @@
 <mat-card class="example-card" *ngIf="client || book">
   <mat-card-header>
-      <div mat-card-avatar><mat-icon matSuffix>account_circle</mat-icon></div>
+    <div mat-card-avatar><mat-icon matSuffix>account_circle</mat-icon></div>
     <mat-card-title>{{client ? client?.clientName : book?.title}}</mat-card-title>
-    <mat-card-subtitle>{{client ? client?.age : book?.subtitle}}</mat-card-subtitle>
+    <mat-card-subtitle>{{book ? book?.author : null}}</mat-card-subtitle>
   </mat-card-header>
+  <mat-card-content>
+    <p>
+        {{client ? client?.age : book?.subtitle}}
+    </p>
+  </mat-card-content>
   <img mat-card-image src="{{client ? client?.photo : book?.photo}}"
     alt="Photo of {{client ? client?.name : book?.title}}">
 </mat-card>

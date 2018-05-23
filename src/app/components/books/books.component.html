@@ -1,4 +1,4 @@
-<app-form (clicked)="passingData($event)"></app-form>
+<app-form (clicked)="passingData($event)" [authorOrTitle]="true"></app-form>
 <div class="container">
   <mat-spinner *ngIf="loading" style="margin: 0 auto;" color="primary"></mat-spinner>
   <div class="books" *ngFor="let book of books">

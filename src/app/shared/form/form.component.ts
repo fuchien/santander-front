@@ -11,7 +11,7 @@ import {SnackBarService} from './../snack-bar/snack-bar.service';
 export class FormComponent implements OnInit {
 
   @Output() clicked = new EventEmitter<event>()
-  @Input() authorOrClient: boolean = false
+  @Input() authorOrTitle: boolean = false
 
   public form : FormGroup
 
@@ -31,7 +31,7 @@ export class FormComponent implements OnInit {
     }
     this.clicked.emit({
       value: this.form.get('input').value,
-      authorOrClient: this.authorOrClient ? this.form.get('slideToggle').value : null
+      authorOrClient: this.authorOrTitle ? this.form.get('slideToggle').value : null
     })
   }
 
