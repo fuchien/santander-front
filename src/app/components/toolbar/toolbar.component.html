@@ -2,6 +2,7 @@
   <mat-toolbar-row>
     <span>S2M</span>
     <span class="example-spacer"></span>
-    <span (click)="goToBooks()">Books</span>
+    <button mat-button [routerLink]="['clients']" routerLinkActive="active">Clients</button>
+    <button mat-button [routerLink]="['books']" routerLinkActive="active">Books</button>
   </mat-toolbar-row>
 </mat-toolbar>

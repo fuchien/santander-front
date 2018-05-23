@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,14 +8,9 @@ import { Router } from '@angular/router';
 export class ToolbarComponent implements OnInit {
 
   constructor(
-    private router: Router
   ) { }
 
   ngOnInit() {
-  }
-
-  goToBooks() {
-    this.router.navigate([`/books`])
   }
 
 }
