@@ -6,6 +6,8 @@ import { SnackBarService } from './../../shared/snack-bar/snack-bar.service';
 
 // MODELS
 import { books } from './../../shared/models/books/books';
+import { event } from '../../shared/models/event/event';
+
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
@@ -24,9 +26,9 @@ export class BooksComponent implements OnInit {
   ngOnInit() {
   }
 
-  passingData(title: string) {
+  passingData(event: event) {
     this.loading = true
-    this.booksService.getData(title)
+    this.booksService.getData(event.value)
       .subscribe(
         (books: books[]) => {
           this.loading = false

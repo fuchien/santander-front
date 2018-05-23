@@ -4,6 +4,7 @@ import { catchError } from 'rxjs/operators';
 
 // MODELS
 import { clients } from './../../shared/models/clients/clients';
+import { event } from './../../shared/models/event/event';
 
 // SERVICES
 import { ClientsService } from './clients.service';
@@ -27,9 +28,9 @@ export class ClientsComponent implements OnInit {
   ngOnInit() {
   }
 
-  passingData(name: string) {
+  passingData(event: event) {
     this.loading = true
-    this.clientsService.getData(name)
+    this.clientsService.getData(event.value)
       .subscribe(
         (clients: clients[]) => {
           this.loading = false

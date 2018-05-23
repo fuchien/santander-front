@@ -1,37 +1,38 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
+import {FormGroup, FormBuilder} from '@angular/forms';
 
-import { SnackBarService } from './../snack-bar/snack-bar.service';
+// MODELS
+import { event } from './../models/event/event';
 
-@Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
-})
+// SERVICES
+import {SnackBarService} from './../snack-bar/snack-bar.service';
+
+@Component({selector: 'app-form', templateUrl: './form.component.html', styleUrls: ['./form.component.scss']})
 export class FormComponent implements OnInit {
 
-  @Output() clicked = new EventEmitter<string>()
+  @Output() clicked = new EventEmitter<event>()
+  @Input() authorOrClient: boolean = false
 
-  public form: FormGroup
+  public form : FormGroup
 
-  constructor(
-    private fb: FormBuilder,
-    private snackBar: SnackBarService
-  ) {
+  constructor(private fb : FormBuilder, private snackBar : SnackBarService) {
     this.form = this.fb.group({
-      'input': ['']
+      'input': [''],
+      'slideToggle': [false]
     })
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   getData() {
     if (!this.form.get('input').value) {
       this.snackBar.openSnackBar('Put some data!', 'Close')
       return
     }
-    this.clicked.emit(this.form.get('input').value)
+    this.clicked.emit({
+      value: this.form.get('input').value,
+      authorOrClient: this.authorOrClient ? this.form.get('slideToggle').value : null
+    })
   }
 
 }
