@@ -17,6 +17,11 @@ const routes: Routes = [
   {
     path: 'books',
     loadChildren: './components/books/books.module#BooksModule'
+  },
+  {
+    path: '**',
+    redirectTo: 'clients',
+    pathMatch: 'full'
   }
 ];
 
