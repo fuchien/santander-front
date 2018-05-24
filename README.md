@@ -2,6 +2,16 @@
 
 You can see -----> [DEMO](https://fuchien.github.io/santander-front) <-----
 
+## Features
+
+Utilização do angular 6 e material.
+
+O deploy é feito via gh-pages.
+
+---
+    https://fuchien.github.io/santander-front
+
+Build foi gerado pelo AoT, devido com problemas de lazy-load no JiT.
 
 ## Developing
 
@@ -25,14 +35,3 @@ Then start a dev server on localhost:4200
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 Foi feito os testes unitários.
-
-## Features
-
-Utilização do angular 6 e material.
-
-O deploy é feito via gh-pages.
-
----
-    https://fuchien.github.io/santander-front
-
-Build foi gerado pelo AoT, devido com problemas de lazy-load no JiT.
