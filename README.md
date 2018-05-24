@@ -1,27 +1,38 @@
 # SantanderFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+You can see -----> [DEMO](https://fuchien.github.io/santander-front) <-----
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Developing
 
-## Code scaffolding
+First, be sure to install dependencies:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
+    npm install
 
-## Build
+Then start a dev server on localhost:4200
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+---
+    npm start
+
+## Building
+
+---
+    ng build
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+Foi feito os testes unitários.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Features
 
-## Further help
+Utilização do angular 6 e material.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+O deploy é feito via gh-pages.
+
+---
+    https://fuchien.github.io/santander-front
+
+Build foi gerado pelo AoT, devido com problemas de lazy-load no JiT.
