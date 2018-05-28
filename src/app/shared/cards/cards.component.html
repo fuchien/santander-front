@@ -1,10 +1,10 @@
-<mat-card class="example-card" *ngIf="showClients || book">
+<mat-card class="example-card" *ngIf="datas">
   <mat-card-header>
-    <div mat-card-avatar><mat-icon matSuffix>{{showClients.length ? 'account_circle' : 'file_copy'}}</mat-icon></div>
+    <div mat-card-avatar><mat-icon matSuffix>{{client ? 'account_circle' : 'file_copy'}}</mat-icon></div>
   </mat-card-header>
   <mat-card-content>
-    <p *ngFor="let client of showClients">
-      {{ client.key }} - {{ client.value }}
+    <p *ngFor="let data of datas">
+      {{ data.key }} - {{ data.value }}
     </p>
   </mat-card-content>
 </mat-card>
