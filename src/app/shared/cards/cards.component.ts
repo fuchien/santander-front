@@ -13,10 +13,19 @@ export class CardsComponent implements OnInit {
 
   @Input() client: clients
   @Input() book: books
+  public showClients = []
 
-  constructor() { }
+  constructor() {
+    
+  }
 
   ngOnInit() {
+    for (let key in this.client) {
+      this.showClients.push({
+        key: key,
+        value: this.client[key]
+      })
+    }
   }
 
 }
