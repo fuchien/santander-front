@@ -11,8 +11,6 @@ O deploy é feito via gh-pages.
 ---
     https://fuchien.github.io/santander-front
 
-Build foi gerado pelo AoT, devido com problemas de lazy-load no JiT.
-
 ## Developing
 
 First, be sure to install dependencies:
